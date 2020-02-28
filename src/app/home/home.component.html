@@ -1,0 +1,32 @@
+<p>home works!</p>
+
+<div class="container">
+    <button (click)="press()"> click
+
+    </button>
+
+</div>
+
+
+<table>
+ <tr>
+     <td>
+         <input type="text" [(ngModel)]="name" name="name"> 
+     </td> 
+ </tr>
+    <tr *ngFor="let data of info |paginate :{itemsPerPage:count,currentPage:p} |filter:name">
+        <td>
+            {{data.employee_name}}
+
+        </td>
+        <td>
+            {{data.employee_salary}}
+
+        </td>
+
+    </tr>
+</table>
+<div>
+    <pagination-controls (pageChange)="p=$event"></pagination-controls>
+</div>
+

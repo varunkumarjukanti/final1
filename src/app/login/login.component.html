@@ -1,0 +1,15 @@
+<p>login works!</p>
+
+<div class="container">
+    <div class="form-group">
+        user name
+        <input type="text" name="loginName" class="form-control" [(ngModel)]="loginName">  
+        password
+        <input type="text" name="loginPass" class="form-control" [(ngModel)]="loginPass"> 
+        <br>
+        <button class="btn btn-primary" (click)="login()">sub</button> 
+{{msg}}
+
+    </div>
+
+</div>

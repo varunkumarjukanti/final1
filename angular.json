@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "git": {
+    "feb": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,12 +17,12 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/git",
+            "outputPath": "dist/feb",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": false,
+            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -45,7 +45,6 @@
               "sourceMap": false,
               "extractCss": true,
               "namedChunks": false,
-              "aot": true,
               "extractLicenses": true,
               "vendorChunk": false,
               "buildOptimizer": true,
@@ -67,18 +66,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "git:build"
+            "browserTarget": "feb:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "git:build:production"
+              "browserTarget": "feb:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "git:build"
+            "browserTarget": "feb:build"
           }
         },
         "test": {
@@ -115,15 +114,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "git:serve"
+            "devServerTarget": "feb:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "git:serve:production"
+              "devServerTarget": "feb:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "git"
+    }
+  },
+  "defaultProject": "feb",
+  "cli": {
+    "analytics": "e83cc593-946c-441c-b3d5-95779fcd1ff9"
+  }
 }
